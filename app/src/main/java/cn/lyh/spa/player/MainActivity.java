@@ -7,13 +7,15 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.dueeeke.videocontroller.StandardVideoController;
+import com.dueeeke.videoplayer.controller.GestureVideoController;
 import com.dueeeke.videoplayer.player.IjkVideoView;
 import com.dueeeke.videoplayer.player.PlayerConfig;
 
 public class MainActivity extends AppCompatActivity {
     IjkVideoView ijkVideoView;
-    private String URL_VOD = "http://220.194.157.67/lms_30539/tv_channel_295__redirect__30539.m3u8";
+    //private String URL_VOD = "http://220.194.157.67/lms_30539/tv_channel_295__redirect__30539.m3u8";
     //private String URL_VOD = "http://30539.hlsplay.aodianyun.com/lms_30539/tv_channel_295.m3u8";
+    private String URL_VOD = Environment.getExternalStorageDirectory().getAbsolutePath()+"/1.mp4";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
         ijkVideoView.setUrl(URL_VOD); //设置视频地址
         ijkVideoView.setTitle("这里是标题"); //设置视频标题
         StandardVideoController controller = new StandardVideoController(this);
-        ijkVideoView.setVideoController(controller); //设置控制器，如需定制可继承BaseVideoController
+        MyController myController = new MyController(this);
+        ijkVideoView.setVideoController(myController); //设置控制器，如需定制可继承BaseVideoController
         ijkVideoView.setScreenScale(IjkVideoView.SCREEN_SCALE_16_9);
         ////////
         //高级设置（可选，须在start()之前调用方可生效）
