@@ -48,6 +48,11 @@ public class MyController extends GestureVideoController {
         Log.e("liyuhao","show");
         top_container.setVisibility(VISIBLE);
         mShowing = true;
+        //不自动消失
+        /*removeCallbacks(mFadeOut);
+        if (timeout != 0) {
+            postDelayed(mFadeOut, timeout);
+        }*/
     }
 
     @Override

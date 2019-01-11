@@ -9,11 +9,16 @@
         android:id="@+id/top_container"
         android:layout_width="200dp"
         android:layout_height="match_parent"
-        android:background="@drawable/dkplayer_shape_standard_controller_top_bg"
+        android:background="@color/dkplayer_background_color"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:visibility="gone"
-        tools:visibility="gone">
+        android:visibility="visible"
+        tools:visibility="visible">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你好"/>
 
         <com.dueeeke.videocontroller.MarqueeTextView
             android:id="@+id/title"
@@ -29,6 +34,6 @@
             android:singleLine="true"
             android:textColor="@android:color/white"
             android:textSize="@dimen/dkplayer_controller_text_size"
-            tools:text="这是一个标题" />
+            android:text="这是一个标题这是一个标题这是一个标题" />
     </LinearLayout>
 </FrameLayout>
